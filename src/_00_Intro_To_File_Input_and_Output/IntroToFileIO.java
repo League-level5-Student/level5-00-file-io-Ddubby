@@ -61,6 +61,7 @@ public class IntroToFileIO {
 			e.printStackTrace();
 		}
 		
+		
 		//Using a file chooser
 		JFileChooser jfc = new JFileChooser();
 		int returnVal = jfc.showOpenDialog(null);
