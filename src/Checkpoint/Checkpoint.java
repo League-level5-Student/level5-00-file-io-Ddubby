@@ -23,6 +23,7 @@ public class Checkpoint implements ActionListener{
 	public JButton save = new JButton();
 	public JButton load = new JButton();
 	public int num = 0;
+	public String string = "";
 	public static void main(String[] args) {
 		Checkpoint checkpoint = new Checkpoint();
 		checkpoint.GUI();
@@ -67,10 +68,12 @@ public class Checkpoint implements ActionListener{
 			try {
 				FileReader reader = new FileReader("src/Checkpoint/file" + fileNum);
 				int c = reader.read();
+				string = "";
 				while (c != -1) {
-					System.out.print((char) c);
+					string += String.valueOf((char) c);
 					c = reader.read();
 				}
+				area.setText(string);
 			} catch (FileNotFoundException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
